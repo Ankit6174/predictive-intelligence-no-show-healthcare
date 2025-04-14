@@ -1,0 +1,133 @@
+Logistic Regression Classifier:
+
+    Test Accuracy of the Best Model: 0.6841150471666997
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+    
+               0       0.70      0.75      0.73     16900
+               1       0.66      0.60      0.63     13418
+    
+        accuracy                           0.68     30318
+       macro avg       0.68      0.68      0.68     30318
+    weighted avg       0.68      0.68      0.68     30318
+
+------------------------------------------------------------------
+Decision Tree Classifier:
+
+    Test Accuracy of the Best Model: 0.7557886404116366
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.79      0.76      0.78     16900
+               1       0.71      0.75      0.73     13418
+
+        accuracy                           0.76     30318
+       macro avg       0.75      0.76      0.75     30318
+    weighted avg       0.76      0.76      0.76     30318
+
+------------------------------------------------------------------
+K Nearest Neighbour:
+
+    Test Accuracy of the Best Model: 0.7607032126129692
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.80      0.77      0.78     16900
+               1       0.72      0.75      0.74     13418
+
+        accuracy                           0.76     30318
+       macro avg       0.76      0.76      0.76     30318
+    weighted avg       0.76      0.76      0.76     30318
+
+------------------------------------------------------------------
+Bernoulli Naye Bayes: 
+
+    Test Accuracy of the Best Model: 0.6721419618708359
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.70      0.71      0.71     16900
+               1       0.63      0.62      0.63     13418
+
+        accuracy                           0.67     30318
+       macro avg       0.67      0.67      0.67     30318
+    weighted avg       0.67      0.67      0.67     30318
+
+------------------------------------------------------------------
+Random Forest Classifier:
+
+    Test Accuracy of the Best Model: 0.7882775908701102
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.82      0.80      0.81     16900
+               1       0.75      0.78      0.76     13418
+
+        accuracy                           0.79     30318
+       macro avg       0.79      0.79      0.79     30318
+    weighted avg       0.79      0.79      0.79     30318
+
+------------------------------------------------------------------
+AdaBoost Classfier:
+
+    Test Accuracy of the Best Model: 0.7048288145656046
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.75      0.71      0.73     16900
+               1       0.66      0.70      0.68     13418
+
+        accuracy                           0.70     30318
+       macro avg       0.70      0.70      0.70     30318
+    weighted avg       0.71      0.70      0.71     30318
+
+------------------------------------------------------------------
+Gradient Boosting Classifier:
+
+    Test Accuracy of the Best Model: 0.7607032126129692
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.80      0.77      0.78     16900
+               1       0.72      0.75      0.74     13418
+
+        accuracy                           0.76     30318
+       macro avg       0.76      0.76      0.76     30318
+    weighted avg       0.76      0.76      0.76     30318
+
+------------------------------------------------------------------
+LightGBM Classifier:
+
+    Test Accuracy of the Best Model: 0.71004024012138
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.74      0.73      0.74     16900
+               1       0.67      0.68      0.68     13418
+
+        accuracy                           0.71     30318
+       macro avg       0.71      0.71      0.71     30318
+    weighted avg       0.71      0.71      0.71     30318
+
+------------------------------------------------------------------
+Stacking Classifier:
+
+    Test Accuracy of the Best Model: 0.7839897090837127
+
+    Classification Report of the Best Model:
+                  precision    recall  f1-score   support
+
+               0       0.80      0.81      0.81     16900
+               1       0.76      0.75      0.75     13418
+
+        accuracy                           0.78     30318
+       macro avg       0.78      0.78      0.78     30318
+    weighted avg       0.78      0.78      0.78     30318
