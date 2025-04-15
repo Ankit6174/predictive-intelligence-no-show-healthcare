@@ -73,6 +73,21 @@ Random Forest Classifier:
     weighted avg       0.79      0.79      0.79     30318
 
 ------------------------------------------------------------------
+Balanced Random Forest Classfier:
+
+   Test Accuracy of the Best Model: 0.7836598720232205
+   
+   Classification Report of the Best Model:
+                 precision    recall  f1-score   support
+   
+              0       0.83      0.77      0.80     16900
+              1       0.73      0.81      0.77     13418
+   
+       accuracy                           0.78     30318
+      macro avg       0.78      0.79      0.78     30318
+   weighted avg       0.79      0.78      0.78     30318
+
+------------------------------------------------------------------◘
 AdaBoost Classfier:
 
     Test Accuracy of the Best Model: 0.7048288145656046
