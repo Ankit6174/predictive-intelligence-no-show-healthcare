@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Example</title>
+  </head>
+  <body>
+    <h1>Submit Your Info</h1>
+    <form action="/submit" method="POST">
+      <label for="gender">Gender</label>
+      <select name="gender" id="Gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="age">Age</label>
+      <input type="number" name="age" placeholder="Enter your age: " />
+      <br />
+      <br />
+
+      <label for="Neighbourhood">Neighbourhood Group</label>
+      <select name="neighbourhood" id="Neighbourhood">
+        <% neighbour.forEach(opt => { %>
+        <option value="<%= opt %>"><%= opt %></option>
+        <% }) %>
+      </select>
+      <br />
+      <br />
+
+      <label for="scholarship">Scholarship</label>
+      <select name="scholarship" id="Scholarship">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="hipertension">Hipertension</label>
+      <select name="hipertension" id="Hipertension">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="diabetes">Diabetes</label>
+      <select name="diabetes" id="Diabetes">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="alcoholism">Alcoholism</label>
+      <select name="alcoholism" id="Alcoholism">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="handcap">Handcap</label>
+      <select name="handcap" id="Handcap">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="smsr">SMS Recieved</label>
+      <select name="smsr" id="Smsr">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="scheduledDay">Scheduled Day</label>
+      <input
+        type="date"
+        name="scheduledDay"
+        id="ScheduledDay"
+        min="2015-11-10"
+        max="2016-06-08"
+      />
+      <br>
+      <br>
+
+      <label for="appointmentDay">Appointment Day</label>
+      <input
+        type="date"
+        name="appointmentDay"
+        id="AppointmentDay"
+        min="2016-04-29"
+        max="2016-06-08"
+      />
+      <br>
+      <br>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <% if (prediction) { %>
+     <h1>Predicton: <%= prediction.prediction %></h1>
+    <% } %>
+  </body>
+</html>
