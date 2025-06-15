@@ -11,14 +11,14 @@ app = Flask(__name__)
 
 REPO_ID = "ankitt6174/no-show-model"
 FILENAME = "model.joblib"
-LOCAL_PATH = "models/model.joblib"
+LOCAL_PATH = os.path.join(os.path.dirname(__file__), "models", "model.joblib")
 
 def download_model():
     if not os.path.exists(LOCAL_PATH):
         print("Model not found locally. Downloading from Hugging Face...")
         downloaded_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
-        os.makedirs("models", exist_ok=True)
-        shutil.move(downloaded_path, LOCAL_PATH)
+        os.makedirs(os.path.dirname(LOCAL_PATH), exist_ok=True)
+        shutil.copyfile(downloaded_path, LOCAL_PATH)
         print("Model downloaded and saved locally.")
     else:
         print("Model already exists locally.")
