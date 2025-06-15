@@ -2,11 +2,11 @@
 
 # Problem Statement:
 
-Every day, hospitals face a serious challenge: patients book appointments but don't show up, without any notice. These missed appointments — called “no-shows” — waste doctors’ valuable time, increase operational costs, and delay treatment for other patients who genuinely need care. 
+Every day, hospitals face a serious challenge: patients book appointments but don't show up, without any notice. These missed appointments called “no-shows” and waste doctor's valuable time, increase operational costs, and delay treatment for other patients who genuinely need care. 
 
 # Solution:
 
-This project aims to develop a machine learning-based predictive system that helps hospitals identify in advance which patients are likely to miss their appointments. By analyzing historical appointment data and patient behavior, the system can assist hospital staff in making data-driven decisions, such as sending follow-up reminders, reallocating time slots, or even flagging high-risk cases — ultimately leading to better healthcare efficiency and reduced patient wait times.
+This project aims to develop a machine learning based predictive system that helps hospitals identify in advance which patients are likely to miss their appointments. By analyzing historical appointment data and patient behavior, the system can assist hospital staff in making predictable decisions, such as sending follow-up reminders, reallocating time slots, or even flagging high-risk cases — ultimately leading to better healthcare efficiency and reduced patient wait times.
 
 # How To Clone
 
@@ -51,15 +51,19 @@ This project aims to develop a machine learning-based predictive system that hel
 * The **Decision Tree** and **K Nearest Neighbour** classifiers showed comparable performance with an accuracy of 0.76.
 * **Logistic Regression** and **Bernoulli Naive Bayes** had the lowest test accuracies.
 
-For a more detailed breakdown of each model's performance, please refer to the individual sections below.
+For more detailed breakdown of each model's performance, please refer to the individual sections below.
 
 #### Note that, some machine learning models were not available in my projects because they were time expensive and took a lot of time to train, and so I trained those models on Google Colab and generated the report.
 
-# Prediction
+# Command to run the project:
+        cd ./python-backend 
+        pip install -r requirements.txt
 
-- ## Run this file:  (*prediction.py*)
+        cd ..
+        cd ./node-backend
+        npm install
 
-        python prediction.py
+        npm start
 
 ## Acknowledgement
 
