@@ -4,6 +4,7 @@ from huggingface_hub import hf_hub_download
 import pickle
 import os
 import joblib
+import shutil
 
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ def download_model():
         print("Model not found locally. Downloading from Hugging Face...")
         downloaded_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
         os.makedirs("models", exist_ok=True)
-        os.rename(downloaded_path, LOCAL_PATH)
+        shutil.move(downloaded_path, LOCAL_PATH)
         print("Model downloaded and saved locally.")
     else:
         print("Model already exists locally.")
