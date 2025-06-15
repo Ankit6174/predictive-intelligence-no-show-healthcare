@@ -87,7 +87,7 @@ Balanced Random Forest Classfier:
       macro avg       0.78      0.79      0.78     30318
    weighted avg       0.79      0.78      0.78     30318
 
-------------------------------------------------------------------◘
+------------------------------------------------------------------
 AdaBoost Classfier:
 
     Test Accuracy of the Best Model: 0.7048288145656046
