@@ -26,7 +26,7 @@ def download_model():
 def load_model():
     with open(LOCAL_PATH, "rb") as f:
         model = joblib.load(f)
-    return mode
+    return model
 
 download_model()
 model = load_model()

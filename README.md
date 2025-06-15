@@ -55,12 +55,16 @@ For more detailed breakdown of each model's performance, please refer to the ind
 
 #### Note that, some machine learning models were not available in my projects because they were time expensive and took a lot of time to train, and so I trained those models on Google Colab and generated the report.
 
-# Command to run the project:
+# Command to run the project
+## Run Node Server
         cd ./node-backend
-        pip install -r requirements.txt
         npm install
-
         npm start
+
+## Run Python Server
+        cd ./python-backend
+        pip install -r requirements.txt
+        python server.py
 
 ## Acknowledgement
 

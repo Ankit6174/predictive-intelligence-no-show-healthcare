@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: node-service
+    name: node-no-show-prediction
     env: node
     rootDir: node-backend
     buildCommand: npm install
@@ -8,7 +8,7 @@ services:
     plan: free
 
   - type: web
-    name: python-service
+    name: python-no-show-prediction
     env: python
     rootDir: python-backend
     buildCommand: pip install -r requirements.txt
