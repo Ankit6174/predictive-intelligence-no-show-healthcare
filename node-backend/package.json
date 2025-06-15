@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run node-server\" \"npm run python-server\"",
     "node-server": "node server.js",
-    "python-server": "cd ..\\python-backend && ..\\python-backend\\.venv\\Scripts\\python.exe server.py"
+    "python-server": "pip install -r requirements.txt && python server.py"
   },
   "keywords": [],
   "author": "",
