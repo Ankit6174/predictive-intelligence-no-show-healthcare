@@ -1,108 +1,442 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Form Example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No-show Prediction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/home.css" />
   </head>
   <body>
-    <h1>Submit Your Info</h1>
-    <form action="/submit" method="POST">
-      <label for="gender">Gender</label>
-      <select name="gender" id="Gender">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-      <br />
-      <br />
+    <div class="home-page-main-container">
+      <div class="first-page-first-line-container">
+        <div class="first-page-first-line-left"></div>
+        <div class="first-page-first-line-right">
+          <img src="./images/first-page-right.png" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="navbar">
+        <div class="navbar-right-container">
+          <div class="navbar-incide-container">
+            <div
+              onclick="scrollToSection('home')"
+              class="navbar-icon home-icon-navbar"
+            >
+              Home
+            </div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
 
-      <label for="age">Age</label>
-      <input type="number" name="age" placeholder="Enter your age: " />
-      <br />
-      <br />
+            <div
+              onclick="window.open(`http://localhost:7000/predict`)"
+              class="navbar-icon prediction-icon-navbar"
+            >
+              Prediction
+            </div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
 
-      <label for="Neighbourhood">Neighbourhood Group</label>
-      <select name="neighbourhood" id="Neighbourhood">
-        <% neighbour.forEach(opt => { %>
-        <option value="<%= opt %>"><%= opt %></option>
-        <% }) %>
-      </select>
-      <br />
-      <br />
+            <div
+              onclick="scrollToSection('about')"
+              class="navbar-icon about-icon-navbar"
+            >
+              About
+            </div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
 
-      <label for="scholarship">Scholarship</label>
-      <select name="scholarship" id="Scholarship">
-        <option value="No">No</option>
-        <option value="Yes">Yes</option>
-      </select>
-      <br />
-      <br />
+            <div
+              onclick="scrollToSection('faq')"
+              class="navbar-icon faq-icon-navbar"
+            >
+              FAQ
+            </div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
 
-      <label for="hipertension">Hipertension</label>
-      <select name="hipertension" id="Hipertension">
-        <option value="No">No</option>
-        <option value="Yes">Yes</option>
-      </select>
-      <br />
-      <br />
+            <button
+              onclick="scrollToSection('contact')"
+              class="contact-icon-navbar"
+            >
+              Contanct
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="main-content-first-page-invisible-main-container">
+        <img src="./images/first-page-behind-text.png" alt="" />
+        <div class="invisible-right-first-page-image-container">
+          <img src="./images/first-page-main-img.png" alt="" srcset="" />
+        </div>
+        <div class="invisible-first-page-main-box-container">
+          <div class="invisible-first-page-main-box-center-container">
+            <div class="invisible-first-page-main-box-center-bottom-container">
+              <div
+                class="incide-invisible-first-page-main-box-center-bottom-container"
+              >
+                <div
+                  style="width: 28%"
+                  class="first-point-first-page-box-container"
+                >
+                  <div class="first-point-first-page-top-container">100K</div>
+                  <div class="first-point-first-page-bottom-container">
+                    rows of data used to train our model
+                  </div>
+                </div>
+                <div class="seperation-first-page-main-box">
+                  <div class="main-seperation-line"></div>
+                </div>
+                <div class="first-point-first-page-box-container">
+                  <div class="first-point-first-page-top-container">10</div>
+                  <div class="first-point-first-page-bottom-container">
+                    best model ready for prediction
+                  </div>
+                </div>
+                <div class="seperation-first-page-main-box">
+                  <div class="main-seperation-line"></div>
+                </div>
+                <div class="first-point-first-page-box-container">
+                  <div class="first-point-first-page-top-container">500</div>
+                  <div class="first-point-first-page-bottom-container">
+                    trees used for training
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="invisible-first-page-main-text-content-container">
+          <div
+            class="invisible-invisible-first-page-main-text-content-left-container"
+          >
+            <div class="invisible-first-page-main-text-content-left-container">
+              <h2>No-show</h2>
+              <h1>Prediction</h1>
+              <p>
+                This machine learning model accurately prediction either a
+                patient will show or not.
+              </p>
+              <div class="button-plus-image-main-container">
+                <div class="first-page-main-content-button-container">
+                  <button
+                    onclick="window.open(`http://localhost:7000/predict`)"
+                  >
+                    Get Prediction
+                  </button>
+                </div>
+                <img src="./images/first-page-doodle-line.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="about" class="about-page-main-container">
+      <div class="invisible-image-about-page-main-container">
+        <div class="invisible-image-about-page-right-main-container">
+          <img src="./images/about-page-img.png" alt="" />
+        </div>
+      </div>
+      <div class="invisible-about-page-main-content-main-container">
+        <div class="invisible-about-page-main-content-container">
+          <div class="invisible-about-page-content-container">
+            <div class="about-page-main-content-left">
+              <img src="./images/about-page-img-arrow.png" alt="" srcset="" />
+            </div>
+            <div class="about-page-main-content-right">
+              <div class="about-page-main-content-right-inner-container">
+                <p class="main-about-page-heading">About us</p>
+                <h1 class="main-about-page-heading-main">
+                  Predicting Patient Attendance, Reducing No-Shows
+                </h1>
+                <p class="main-about-page-paragraph">
+                  We address the expensive issue of no-shows at this website.
+                  Our machine learning model makes an accurate prediction about
+                  whether you will miss an appointment based on your past data.
+                  You can increase productivity, cut down on lost revenue, and
+                  enhance customer flow by taking proactive measures to this
+                  foresight. Our goal is to turn no-shows into chances for more
+                  intelligent, reliable operations.
+                </p>
+                <div class="bottom-containet-about-page-left-continer">
+                  <div
+                    class="invisible-one-bottom-containet-about-page-left-continer"
+                  ></div>
+                  <button
+                    onclick="window.open(`http://localhost:7000/predict`)"
+                    class="invisible-two-bottom-containet-about-page-left-continer"
+                  >
+                    Get Predicion
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="faq" class="faq-page-main-container">
+      <div class="invisible-top-right-image-main-container-faq-page">
+        <div class="top-right-image-main-container-faq-page">
+          <img src="./images/faq-top-right.png" alt="" />
+        </div>
+      </div>
+      <div class="invisible-bottom-left-image-main-container-faq-page">
+        <div class="bottom-left-image-main-container-faq-page">
+          <img src="./images/faq-bottom-left.png" alt="" />
+        </div>
+      </div>
+      <div class="invisible-main-faq-page-container">
+        <div class="main-faq-page-container">
+          <h2>Frequently Asked Question</h2>
+          <div
+            id="wholequestion1"
+            class="whole-question-main-box"
+            style="margin-top: 30px"
+          >
+            <div class="whole-questio-main-box-separation-line"></div>
+            <div class="container-question-and-icon">
+              <div class="main-faq-page-container-question">
+                What does your website do?
+              </div>
+              <div class="main-faq-page-icon-container">
+                <i
+                  id="arbtn1"
+                  style="cursor: pointer"
+                  class="ri-arrow-down-s-line"
+                ></i>
+              </div>
+            </div>
+            <div id="ans1" class="answer-main-container">
+              We use machine learning to predict if a scheduled appointment will
+              result in a "no-show," helping businesses proactively manage their
+              schedules and resources.
+            </div>
+          </div>
 
-      <label for="diabetes">Diabetes</label>
-      <select name="diabetes" id="Diabetes">
-        <option value="No">No</option>
-        <option value="Yes">Yes</option>
-      </select>
-      <br />
-      <br />
+          <div id="wholequestion2" class="whole-question-main-box">
+            <div class="whole-questio-main-box-separation-line"></div>
+            <div class="container-question-and-icon">
+              <div class="main-faq-page-container-question">
+                How does your prediction model work?
+              </div>
+              <div class="main-faq-page-icon-container">
+                <i
+                  id="arbtn2"
+                  style="cursor: pointer"
+                  class="ri-arrow-down-s-line"
+                ></i>
+              </div>
+            </div>
+            <div
+              id="ans2"
+              style="display: none"
+              id="ans1"
+              class="answer-main-container"
+            >
+              Our model analyzes your historical appointment data, identifying
+              patterns and factors that indicate a higher likelihood of a
+              no-show for future appointments.
+            </div>
+          </div>
 
-      <label for="alcoholism">Alcoholism</label>
-      <select name="alcoholism" id="Alcoholism">
-        <option value="No">No</option>
-        <option value="Yes">Yes</option>
-      </select>
-      <br />
-      <br />
+          <div id="wholequestion3" class="whole-question-main-box">
+            <div class="whole-questio-main-box-separation-line"></div>
+            <div class="container-question-and-icon">
+              <div class="main-faq-page-container-question">
+                How accurate are the predictions?
+              </div>
+              <div class="main-faq-page-icon-container">
+                <i
+                  id="arbtn3"
+                  style="cursor: pointer"
+                  class="ri-arrow-down-s-line"
+                ></i>
+              </div>
+            </div>
+            <div
+              id="ans3"
+              style="display: none"
+              id="ans1"
+              class="answer-main-container"
+            >
+              Our model accurately predicts no-shows with 79% accuracy. It also
+              boasts 82% precision and 80% f1-score, ensuring reliable insights
+              for your scheduling needs.
+            </div>
+          </div>
 
-      <label for="handcap">Handcap</label>
-      <select name="handcap" id="Handcap">
-        <option value="No">No</option>
-        <option value="Yes">Yes</option>
-      </select>
-      <br />
-      <br />
+          <div id="wholequestion4" class="whole-question-main-box">
+            <div class="whole-questio-main-box-separation-line"></div>
+            <div class="container-question-and-icon">
+              <div class="main-faq-page-container-question">
+                How can I fine tune this model?
+              </div>
+              <div class="main-faq-page-icon-container">
+                <i
+                  id="arbtn4"
+                  style="cursor: pointer"
+                  class="ri-arrow-down-s-line"
+                ></i>
+              </div>
+            </div>
+            <div
+              id="ans4"
+              style="display: none"
+              id="ans1"
+              class="answer-main-container"
+            >
+              This model is for project demonstration only and cannot be
+              fine-tuned directly. However, you can train your own model using
+              our processed dataset to achieve similar predictions.
+            </div>
+          </div>
 
-      <label for="smsr">SMS Recieved</label>
-      <select name="smsr" id="Smsr">
-        <option value="No">No</option>
-        <option value="Yes">Yes</option>
-      </select>
-      <br />
-      <br />
+          <div id="wholequestion5" class="whole-question-main-box">
+            <div class="whole-questio-main-box-separation-line"></div>
+            <div class="container-question-and-icon">
+              <div class="main-faq-page-container-question">
+                What kind of data do I need to provide?
+              </div>
+              <div class="main-faq-page-icon-container">
+                <i
+                  id="arbtn5"
+                  style="cursor: pointer"
+                  class="ri-arrow-down-s-line"
+                ></i>
+              </div>
+            </div>
+            <div
+              id="ans5"
+              style="display: none"
+              id="ans1"
+              class="answer-main-container"
+            >
+              Typically, we utilize anonymous historical appointment data,
+              including dates, times, patient/client demographics
+              (non-identifying), appointment types, and previous show/no-show
+              statuses.
+            </div>
+          </div>
 
-      <label for="scheduledDay">Scheduled Day</label>
-      <input
-        type="date"
-        name="scheduledDay"
-        id="ScheduledDay"
-        min="2015-11-10"
-        max="2016-06-08"
-      />
-      <br>
-      <br>
+          <div id="wholequestion6" class="whole-question-main-box">
+            <div class="whole-questio-main-box-separation-line"></div>
+            <div class="container-question-and-icon">
+              <div class="main-faq-page-container-question">
+                Who can benefit from this model?
+              </div>
+              <div class="main-faq-page-icon-container">
+                <i
+                  id="arbtn6"
+                  style="cursor: pointer"
+                  class="ri-arrow-down-s-line"
+                ></i>
+              </div>
+            </div>
+            <div
+              id="ans6"
+              style="display: none"
+              id="ans1"
+              class="answer-main-container"
+            >
+              Any business reliant on scheduled appointments, including
+              healthcare clinics, salons, dental offices, and even service
+              providers, can significantly benefit from our insights.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact" class="contact-page-main-container">
+      <div class="contact-page-main-right-container">
+        <img src="./images/contact-page-top-right.png" alt="" srcset="" />
+      </div>
+      <div class="contact-page-main-container-main">
+        <div class="contact-page-main-container-main-center">
+          <div class="contact-page-contact-main-heading">Contact</div>
+          <div class="contact-page-seperation-line"></div>
+          <div class="contact-page-main-bottom-conatainer">
+            <h2>Let's Talk</h2>
+            <p>
+              To request a quote or want to meet for a coffee,contact us
+              directly or fill out the form and we will get back to you
+              promptly.
+            </p>
 
-      <label for="appointmentDay">Appointment Day</label>
-      <input
-        type="date"
-        name="appointmentDay"
-        id="AppointmentDay"
-        min="2016-04-29"
-        max="2016-06-08"
-      />
-      <br>
-      <br>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <% if (prediction) { %>
-     <h1>Predicton: <%= prediction.prediction %></h1>
-    <% } %>
+            <form action="#" class="contact-page-main-form-conatiner">
+              <h4>Your Name</h4>
+              <input type="text" class="yourname-form" />
+              <h4>Your Email</h4>
+              <input type="text" class="youremail-form" />
+              <h4>Your Message</h4>
+              <textarea name="message" id="msg"></textarea>
+              <div class="both-button-and-logos-container">
+                <div class="contact-form-button-container">
+                  <button type="submit">Send Message</button>
+                </div>
+                <div class="contact-form-logos-main-container">
+                  <div class="contact-form-logos-container">
+                    <i class="ri-github-fill"></i>
+                    <i class="ri-linkedin-box-fill"></i>
+                    <i class="ri-instagram-line"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="last-page-main-container">
+      <div class="middle-line-contact-last-page"></div>
+      <div class="main-heading-of-last-page">
+        <h1>thank <font style="color: #bed780">you</font>!</h1>
+      </div>
+      <div class="main-message-of-last-page">
+        <p>
+          Your feedback is valuable. If you have any suggestions for improving
+          this site, please don't hesitate to contact us.
+        </p>
+      </div>
+      <div class="last-page-contact-main-container">
+        <div class="phone-last-page-main-container">
+          <div class="logo-last-page-container">
+            <i class="ri-phone-line"></i>
+          </div>
+          <div class="phone-text-last-page-container">9926278970</div>
+        </div>
+        <div class="email-last-page-main-container">
+          <div style="width: 22%" class="logo-last-page-container">
+            <i class="ri-mail-line"></i>
+          </div>
+          <div class="phone-text-last-page-container">ankit@gmail.com</div>
+        </div>
+        <div class="indore-last-page-main-container">
+          <div class="logo-last-page-container">
+            <i class="ri-map-pin-line"></i>
+          </div>
+          <div class="phone-text-last-page-container">Indore, MP</div>
+        </div>
+      </div>
+    </div>
+    <div class="last-page-last-line">
+      <div class="last-line"></div>
+      <img src="./images/lastlineimg.png" alt="" />
+    </div>
   </body>
+  <script src="./javascript/home.js"></script>
 </html>

@@ -1,10 +1,12 @@
 const express = require("express");
-const axios = require('axios');
+const axios = require("axios");
+const path = require("path");
 
 const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 const neighbour = [
   "JARDIM CAMBURI",
@@ -91,8 +93,12 @@ const neighbour = [
 ];
 
 app.get("/", (req, res) => {
+  res.render("home", { neighbour });
+});
+
+app.get("/predict", (req, res) => {
   let prediction = null;
-  res.render("Home", { neighbour, prediction });
+  res.render("form", { neighbour, prediction });
 });
 
 app.post("/submit", (req, res) => {
@@ -134,32 +140,33 @@ app.post("/submit", (req, res) => {
   }
 
   const data = {
-    'Gender': gender,
-    'Age': age,
-    "Neighbourhood": neighbourhood,
-    'Scholarship': scholarship,
-    "Hipertension": hipertension,
-    "Diabetes": diabetes,
-    "Alcoholism": alcoholism,
-    "Handcap": handcap,
-    "SMSreceived": smsr,
-    "WaitingTime": waitingTime,
-    "AppointmentDayOfWeek": AppointmentDayOfWeek,
-    "WaitingGroup": waitingGroup,
+    Gender: gender,
+    Age: age,
+    Neighbourhood: neighbourhood,
+    Scholarship: scholarship,
+    Hipertension: hipertension,
+    Diabetes: diabetes,
+    Alcoholism: alcoholism,
+    Handcap: handcap,
+    SMSreceived: smsr,
+    WaitingTime: waitingTime,
+    AppointmentDayOfWeek: AppointmentDayOfWeek,
+    WaitingGroup: waitingGroup,
   };
 
-  axios.post("http://127.0.0.1:5000/datareceive", data)
-  .then((response) => {
-    let prediction = response.data;
-    console.log(prediction)
-    res.render('Home', { neighbour, prediction });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-  
+  axios
+    .post("http://127.0.0.1:5000/datareceive", data)
+    .then((response) => {
+      let prediction = response.data;
+      console.log(prediction);
+      res.render("form", { neighbour, prediction });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 
 const PORT = 7000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+);

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No-show Prediction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/form.css" />
+  </head>
+  <body>
+    <div class="home-page-main-container">
+      <div id="cursor-circle"></div>
+      <div class="first-page-first-line-container">
+        <div class="first-page-first-line-left"></div>
+        <div class="first-page-first-line-right">
+          <img src="./images/first-page-right.png" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="navbar">
+        <div class="navbar-right-container">
+          <div class="navbar-incide-container">
+            <div
+              onclick="window.open(`http://localhost:7000/`)"
+              class="navbar-icon home-icon-navbar"
+            >
+              Home
+            </div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
+
+            <div class="navbar-icon prediction-icon-navbar">Prediction</div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
+
+            <div
+              onclick="window.open(`http://localhost:7000/`)"
+              class="navbar-icon about-icon-navbar"
+            >
+              About
+            </div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
+
+            <div              
+              onclick="window.open(`http://localhost:7000/`)"
+              class="navbar-icon faq-icon-navbar"
+            >
+              FAQ
+            </div>
+            <div class="seperation-navbar-icon">
+              <div class="main-line-seperation-navbar"></div>
+            </div>
+
+            <button              
+              onclick="window.open(`http://localhost:7000/`)"
+              class="contact-icon-navbar"
+            >
+              Contanct
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-main-container">
+        <div class="bottom-main-left-container">
+          <div class="bottom-main-left-first-container">
+            <div class="bottom-main-left-first-div-line-container"></div>
+            <div class="bottom-main-left-first-heading"><p>Get Prediction Today</p></div>
+            <div class="seperation-line-left-main-container">
+              <div class="line-left-main-container"></div>
+            </div>
+          </div>
+          <div class="bottom-main-left-ready-for-prediction-container">
+            <h1>Ready For <font style="font-family: 'Oooh Baby', cursive;font-weight: 400;font-style: normal;">Prediction</font>?</h1>
+          </div>
+          <div class="botton-main-left-paragraph-container">
+            <p>
+              Enter your appointment details below to see how our machine learning can help you minimize no-shows and optimize your scheduling.
+            </p>
+          </div>
+          <div class="bottom-main-left-seperation-line"></div>
+          <div class="bottom-main-left-prediction-result-container">
+            <h2>Your Prediction Will Show Here: <font style="font-family: 'Oooh Baby', cursive;font-weight: 400;font-style: normal;">
+              <% if (!prediction) { %>
+                Patient Will...
+              <% } %>
+              <% if (prediction) { %>
+                <%= prediction.prediction %>
+              <% } %>
+            </font></h2>
+          </div>
+        </div>
+        <form action="/submit" method="POST" class="bottom-main-right-container">
+          <div class="form-first-row-main-container">
+            <input type="text" name="name" id="name" placeholder="Name">
+            <input type="email" name="email" id="email" placeholder="Email">
+          </div>
+
+          <div class="form-second-row-main-container">
+            <input style="width: 30%;" type="number" name="age" id="age" placeholder="Age">
+            <select style="width: 60%;" name="neighbourhood" id="Neighbourhood">
+              <% neighbour.forEach(opt => { %>
+              <option value="<%= opt %>"><%= opt %></option>
+              <% }) %>
+          </select>
+          </div>
+
+          <div class="form-third-row-main-container">
+            <div class="schedule-date-main-continer">
+              <h4>Schedule Date</h4>
+              <input type="date" name="scheduledDay" id="ScheduledDay" min="2015-11-10" max="2016-06-08">
+            </div>
+            <div class="appointment-date-main-continer">
+              <h4>Appointment Date</h4>
+              <input type="date" name="appointmentDay" id="AppointmentDay" min="2016-04-29" max="2016-06-08">
+            </div>
+          </div>
+
+          <div class="form-fourth-row-main-container">
+            <div class="yes-no-container">
+              <h4 class="yes-no-container-heading">Scholarship</h4>
+              <select name="scholarship" id="scholarship">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="yes-no-container">
+              <h4 class="yes-no-container-heading">Hipertension</h4>
+              <select name="hipertension" id="hipertension">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="yes-no-container">
+              <h4 class="yes-no-container-heading">Handcap</h4>
+              <select name="handcap" id="handcap">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-fourth-row-main-container">
+            <div class="yes-no-container">
+              <h4 class="yes-no-container-heading">Diabetes</h4>
+              <select name="diabetes" id="diabetes">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="yes-no-container">
+              <h4 class="yes-no-container-heading">Alcoholism</h4>
+              <select name="alcoholism" id="alcoholism">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="yes-no-container">
+              <h4 class="yes-no-container-heading">SMS Receive</h4>
+              <select name="smsr" id="smsr">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-fiveth-row-main-container">
+            <div class="gender-option-container">
+              <h4>Gender</h4>
+              <select name="gender" id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+            <div class="submit-final-button">
+                <div class="border-button">
+                  <input type="submit" value="Predict">
+                </div>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/javascript/form.js"></script>
+</html>
