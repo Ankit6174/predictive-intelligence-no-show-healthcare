@@ -1,13 +1,12 @@
 import numpy as np
 from flask import Flask, request, jsonify
-from huggingface_hub import hf_hub_download
+from huggingface_hub import hf_hub_download #type:ignore
 import pickle
 import os
 import joblib
 import shutil
 
 app = Flask(__name__)
-
 
 REPO_ID = "ankitt6174/no-show-model"
 FILENAME = "model.joblib"
