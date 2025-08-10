@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>No-show Prediction</title>
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
@@ -18,7 +22,8 @@
     <link rel="stylesheet" href="./css/home.css" />
   </head>
   <body>
-    <div class="home-page-main-container">
+    <div id="main" data-scroll-container>
+      <div class="home-page-main-container" data-scroll>
       <div class="first-page-first-line-container">
         <div class="first-page-first-line-left"></div>
         <div class="first-page-first-line-right">
@@ -437,6 +442,14 @@
       <div class="last-line"></div>
       <img src="./images/lastlineimg.png" alt="" />
     </div>
+    </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+    });
+  </script>
   <script src="./javascript/home.js"></script>
 </html>

@@ -1,16 +1,12 @@
 ![image](https://github.com/user-attachments/assets/a2175b7e-aa1f-40ed-a3d6-a07bba2f667e)
 
-# Problem Statement:
+# Problem Statement
 
 Every day, hospitals face a serious challenge: patients book appointments but don't show up, without any notice. These missed appointments called “no-shows” and waste doctor's valuable time, increase operational costs, and delay treatment for other patients who genuinely need care. 
 
-# Solution:
+# Solution
 
 This project aims to develop a machine learning based predictive system that helps hospitals identify in advance which patients are likely to miss their appointments. By analyzing historical appointment data and patient behavior, the system can assist hospital staff in making predictable decisions, such as sending follow-up reminders, reallocating time slots, or even flagging high-risk cases — ultimately leading to better healthcare efficiency and reduced patient wait times.
-
-# How To Clone
-
-    git clone https://github.com/Ankit6174/predictive-intelligence-no-show-healthcare.git
 
 # Model Building
 - Best Model 
@@ -55,6 +51,12 @@ For more detailed breakdown of each model's performance, please refer to the ind
 
 #### Note that, some machine learning models were not available in my projects because they were time expensive and took a lot of time to train, and so I trained those models on Google Colab and generated the report.
 
+# How To Clone
+
+    git clone https://github.com/Ankit6174/predictive-intelligence-no-show-healthcare.git
+
+    cd .\predictive-intelligence-no-show-healthcare\
+
 # Command to run the project
 ## Run Node Server
         cd ./node-backend
@@ -62,7 +64,10 @@ For more detailed breakdown of each model's performance, please refer to the ind
         npm start
 
 ## Run Python Server
+        cd ..
         cd ./python-backend
+        python -m venv venv
+        venv\Scripts\activate.bat
         pip install -r requirements.txt
         python server.py
 
