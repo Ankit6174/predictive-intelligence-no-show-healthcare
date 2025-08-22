@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: node-service
-    env: node
-    rootDir: node-backend
-    buildCommand: npm install
-    startCommand: node server.js
-    plan: free

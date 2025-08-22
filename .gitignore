@@ -1,3 +1,4 @@
 node-backend/node_modules
+node-backend/.env
 python-backend/.venv
 python-backend/models/model.joblib

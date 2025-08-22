@@ -64,7 +64,6 @@ For more detailed breakdown of each model's performance, please refer to the ind
         npm start
 
 ## Run Python Server
-        cd ..
         cd ./python-backend
         python -m venv venv
         venv\Scripts\activate.bat
