@@ -1,3 +1,19 @@
+gsap.to(".navbar-icon", {
+  duration: 0.3,
+  opacity: 1,
+  y: 0,
+  stagger: 0.2, 
+  ease: "power2.out"
+});
+
+gsap.to(".incide-invisible-first-page-main-box-center-bottom-container, .invisible-first-page-main-box-center-bottom-container", {
+  duration: 0.2,
+  opacity: 1,
+  y: 0,
+  stagger: 0.1,
+  ease: "power2.out"
+})
+
 document.getElementById("arbtn1").addEventListener("click", () => {
   document.getElementById("ans1").style.display = "block";
   document.getElementById("ans2").style.display = "none";

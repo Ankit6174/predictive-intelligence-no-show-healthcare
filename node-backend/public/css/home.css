@@ -81,6 +81,11 @@ body {
   display: flex;
 }
 
+.navbar-icon{
+  opacity: 0;
+  transform: translateY(20px);
+}
+
 .navbar-icon,
 .home-icon-navbar {
   height: 100%;
@@ -165,6 +170,7 @@ body {
   bottom: 0;
   right: 0;
   background: var(--secondary-color);
+  transform: translateY(30px);
 }
 
 .incide-invisible-first-page-main-box-center-bottom-container {
@@ -179,6 +185,8 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transform: translateY(30px);
+  opacity: 0
 }
 
 .incide-invisible-first-page-main-box-center-bottom-container:hover {

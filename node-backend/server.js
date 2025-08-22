@@ -1,12 +1,17 @@
 const express = require("express");
 const axios = require("axios");
 const path = require("path");
+const dotenv = require("dotenv");
+const DB = require('./config/contectDB');
+const userShema = require('./models/contect');
 
 const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
+dotenv.config();
 
 const neighbour = [
   "JARDIM CAMBURI",
@@ -101,6 +106,18 @@ app.get("/predict", (req, res) => {
   res.render("form", { neighbour, prediction });
 });
 
+DB();
+
+app.post('/getContect', async (req, res) => {
+  let { name, email, message } = req.body;
+  await userShema.create({
+    name,
+    email,
+    message
+  });
+  res.send("Message Send Successfully!");
+});
+
 app.post("/submit", (req, res) => {
   const {
     gender,
@@ -166,7 +183,7 @@ app.post("/submit", (req, res) => {
     });
 });
 
-const PORT = 7000;
+const PORT = process.env.PORT || 7001;
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );
