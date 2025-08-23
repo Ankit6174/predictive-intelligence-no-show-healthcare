@@ -74,3 +74,35 @@ function scrollToSection(id) {
     section.scrollIntoView({ behavior: "smooth" });
   }
 }
+
+const form = document.getElementById('formid');
+const submitbtn = document.getElementById('submitbtnid');
+const messagecontainer = document.getElementById('messageCtr');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  submitbtn.disable = true;
+
+  const formData = new FormData(form);
+
+  fetch("/getContect", {
+    method: "POST",
+    body: new URLSearchParams(formData)
+  })
+  .then((res) => {
+    if (res.ok) {
+      alert("form data sent successfully!");
+      messagecontainer.style.display = 'flex';
+      form.reset();
+    } else {
+      alert("Someting went wrong");
+    }
+  })
+  .catch((err) => {
+    console.log("Some error occured -> ", err);
+  })
+  .finally(() => {
+    submitbtn.disable = false;
+  });
+});

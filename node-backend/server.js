@@ -116,7 +116,7 @@ app.post('/getContect', async (req, res) => {
     email,
     message
   });
-  res.send("Message Send Successfully!");
+  res.sendStatus(200);
 });
 
 app.post("/submit", (req, res) => {

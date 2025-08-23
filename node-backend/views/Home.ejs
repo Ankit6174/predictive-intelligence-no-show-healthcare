@@ -382,16 +382,16 @@
               promptly.
             </p>
 
-            <form action="/getContect" method="post" class="contact-page-main-form-conatiner">
+            <form id="formid" class="contact-page-main-form-conatiner">
               <h4>Your Name</h4>
               <input type="text" name="name" class="yourname-form" />
               <h4>Your Email</h4>
               <input type="email" name="email" class="youremail-form" />
               <h4>Your Message</h4>
-              <textarea name="message" name="message" id="msg"></textarea>
+              <textarea name="message" id="msg"></textarea>
               <div class="both-button-and-logos-container">
                 <div class="contact-form-button-container">
-                  <button type="submit">Send Message</button>
+                  <button id="submitbtnid" type="submit">Send Message</button>
                 </div>
                 <div class="contact-form-logos-main-container">
                   <div class="contact-form-logos-container">
@@ -403,6 +403,13 @@
               </div>
             </form>
           </div>
+          <div id="messageCtr" class="message-show-container">
+            <div class="tickmarck-container">
+              <i class="ri-check-line"></i>
+            </div>
+            <h1>Thanks for reaching us!</h1>
+            <p>Your message has been sent successfully. We'll get back to you shortly.</p>
+          </div>          
         </div>
       </div>
     </div>
