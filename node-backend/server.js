@@ -99,12 +99,12 @@ const neighbour = [
 ];
 
 app.get("/", (req, res) => {
-  res.render("home", { neighbour });
+  res.render("Home", { neighbour });
 });
 
 app.get("/predict", (req, res) => {
   let prediction = null;
-  res.render("form", { neighbour, prediction });
+  res.render("Form", { neighbour, prediction });
 });
 
 DB();
