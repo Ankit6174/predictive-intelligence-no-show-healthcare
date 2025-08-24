@@ -1,5 +1,6 @@
 import numpy as np
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from huggingface_hub import hf_hub_download #type:ignore
 import pickle
 import os
@@ -7,6 +8,7 @@ import joblib
 import shutil
 
 app = Flask(__name__)
+CORS(app)
 
 REPO_ID = "ankitt6174/no-show-model"
 FILENAME = "model.joblib"
@@ -104,4 +106,5 @@ def receive_data():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
