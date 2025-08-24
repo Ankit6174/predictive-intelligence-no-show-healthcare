@@ -133,7 +133,7 @@ app.post("/submit", (req, res) => {
     handcap,
     smsr,
   } = req.body;
-
+  
   const scdate = new Date(scheduledDay);
   const acdate = new Date(appointmentDay);
 
@@ -159,7 +159,7 @@ app.post("/submit", (req, res) => {
 
   const data = {
     Gender: gender,
-    Age: age,
+    Age: Number(age),
     Neighbourhood: neighbourhood,
     Scholarship: scholarship,
     Hipertension: hipertension,
@@ -172,11 +172,10 @@ app.post("/submit", (req, res) => {
     WaitingGroup: waitingGroup,
   };
 
-  axios
-    .post("http://127.0.0.1:5000/datareceive", data)
+  axios 
+    .post("https://ankitt6174-python-server.hf.space/predict", data)
     .then((response) => {
       let prediction = response.data;
-      console.log(prediction);
       res.render("form", { neighbour, prediction });
     })
     .catch((error) => {
