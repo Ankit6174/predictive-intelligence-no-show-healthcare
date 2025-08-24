@@ -104,7 +104,7 @@ app.get("/", (req, res) => {
 
 app.get("/predict", (req, res) => {
   let prediction = null;
-  res.render("Form", { neighbour, prediction });
+  res.render("form", { neighbour, prediction });
 });
 
 DB();
